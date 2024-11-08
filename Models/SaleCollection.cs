@@ -21,5 +21,7 @@ namespace WeekendSales.Models
         {
             get => _collection[index];
         }
+
+        public int Count => _collection.Count;
     }
 }
