@@ -16,5 +16,10 @@ namespace WeekendSales.Models
         {
             _collection = new Collection<Sale>();
         }
+
+        public Sale this[int index]
+        {
+            get => _collection[index];
+        }
     }
 }
