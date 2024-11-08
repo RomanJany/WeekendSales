@@ -12,10 +12,5 @@ namespace WeekendSales.Models
         required public DateTime Date { get; set; }
         required public double Price { get; set; }
         required public double Tax { get; set; }
-
-        public void Open(string path)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
