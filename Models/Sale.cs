@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WeekendSales.Models
 {
+    /// <summary>
+    /// Holds the data of a single sale.
+    /// </summary>
     public class Sale
     {
         required public string ItemName { get; set; }
