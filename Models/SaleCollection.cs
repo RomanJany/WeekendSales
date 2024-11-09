@@ -256,6 +256,9 @@ namespace WeekendSales.Models
             return _salesElement.InvalidElement;
         }
 
+        /// <summary>
+        /// Gets the number of elements contained in the SaleCollection.
+        /// </summary>
         public int Count => _saleCollection.Count;
     }
 }
