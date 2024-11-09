@@ -12,10 +12,17 @@ using System.Xml;
 
 namespace WeekendSales.Models
 {
+    /// <summary>
+    /// Serves as a read-only collection of sale objects.
+    /// </summary>
     public class SaleCollection
     {
         private Collection<Sale> _saleCollection;
         
+        /// <summary>
+        /// Initializes a new SaleCollection filled with data read from a supplied path.
+        /// </summary>
+        /// <param name="path">A path to an XML file containing sales.</param>
         public SaleCollection(string path)
         {
             _saleCollection = new Collection<Sale>();
@@ -45,6 +52,10 @@ namespace WeekendSales.Models
             Text
         }
 
+        /// <summary>
+        /// Fills the collection containing sale with data contained inside a XML file.
+        /// </summary>
+        /// <param name="path">A path to an XML file containing sales.</param>
         private void Open(string path)
         {            
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -176,6 +187,12 @@ namespace WeekendSales.Models
             throw new InvalidDataException();
         }
 
+        /// <summary>
+        /// Reads current node from the reader and checks the correct depth.
+        /// </summary>
+        /// <param name="reader">An XmlReader which is used to read the current node</param>
+        /// <param name="text">Used for outputting text, is set to "" unless _salesElement.Text is returned</param>
+        /// <returns>Returns the type of an element found, or InvalidElement on error.</returns>
         private _salesElement ReadElement(XmlReader reader, out string text)
         {
             // Text
