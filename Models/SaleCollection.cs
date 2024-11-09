@@ -64,7 +64,8 @@ namespace WeekendSales.Models
             using XmlReader reader = XmlReader.Create(path, settings);
 
             // Read Sales
-            if (ReadElement(reader, out string text) != _salesElement.Sales)
+            if (!reader.Read() || 
+                ReadElement(reader, out string text) != _salesElement.Sales)
             {
                 throw new InvalidDataException();
             }
