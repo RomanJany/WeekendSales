@@ -29,6 +29,9 @@ namespace WeekendSales.Models
             Open(path);
         }
 
+        /// <summary>
+        /// Gets the sale at the specified index.
+        /// </summary>
         public Sale this[int index]
         {
             get => _saleCollection[index];
